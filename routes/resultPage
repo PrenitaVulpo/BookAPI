@@ -3,12 +3,14 @@ var jsdom = require("jsdom");
 
 module.exports = function(app){
     app.get('/resultpage', function(req, res){
+        res.header({'Content-Type': 'application/json; charset=utf-8' });
         var bookID = req.query.bookid;
-        res.render("index");
         var book = "https://books.google.com.br/books?id="+bookID+"&sitesec=buy&source=gbs_buy_r";
-        curl.get(book, null, (err,resp,body)=>{
-            if(resp.statusCode == 200){
-                parseData(body);
+        var chars = {"headers": {'content-type': 'charset: utf-8', 'content-encoding': 'gzip'}};
+        curl.get(book, chars, (err, resp, body)=>{
+            if(resp.statusCode === 200){
+                var babe = parseData(body);
+                res.json(babe);
             }
             else{
                 //some error handling

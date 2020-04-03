@@ -6,7 +6,5 @@ module.exports = function(app){
 
     });
 
-    app.post('/resultpage', function(req, res){
-        res.render("index")
-    });
+
 };
