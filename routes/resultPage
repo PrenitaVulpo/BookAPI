@@ -74,7 +74,7 @@ module.exports = function(app){
             // Return an object with the data extracted from the page.
             // It will be stored to the resulting dataset.
 
-            return retorno
+            return json.parse(retorno)
     }
 
 });}
