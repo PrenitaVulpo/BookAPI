@@ -50,12 +50,29 @@ module.exports = function(app){
             priceTest = priceTest.filter(preco => !preco == 0);
 
             var i;
+            class Obj {
+                constructor(retailerName, price, link) {
+                    this.retailerName = retailerName;
+                    this.price = price;
+                    this.link = link;
+                }
+            }
+            class Convertt {
+                constructor(name, array) {
+                    this.item = name;
+                    this.array = array;
+                }
+            }
             for(i = 0; i<contator.length; i++){
-                retorno.push({
+                retorno.push(new Obj(nameTest[i], priceTest[i], linkTest[i]))
+                /*
+                {
                     retailerName: nameTest[i],
                     price: priceTest[i],
                     link: linkTest[i]
-                })
+                }
+                */
+
             }
 
 
@@ -74,7 +91,9 @@ module.exports = function(app){
             // Return an object with the data extracted from the page.
             // It will be stored to the resulting dataset.
 
-            return json.parse(retorno)
+            var tt = new Convertt("item", retorno);
+            return tt
+
     }
 
 });}
