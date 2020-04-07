@@ -58,9 +58,9 @@ module.exports = function(app){
                 }
             }
             class Convertt {
-                constructor(name, array) {
+                constructor(retailer) {
                     this.item = name;
-                    this.array = array;
+                    this.retailer = retailer;
                 }
             }
             for(i = 0; i<contator.length; i++){
@@ -91,7 +91,7 @@ module.exports = function(app){
             // Return an object with the data extracted from the page.
             // It will be stored to the resulting dataset.
 
-            var tt = new Convertt("Retailer", retorno);
+            var tt = new Convertt(retorno);
             return tt
 
     }
