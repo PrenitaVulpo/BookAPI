@@ -82,7 +82,7 @@ module.exports = function(app){
             console.log(nameTest.length);
             console.log(linkTest.length);
             console.log(priceTest);
-            console.log(JSON.stringify(retorno));
+            //console.log(JSON.stringify(retorno));
 
             // Manually add a new page to the queue for scraping.
             // To make this work, make sure the "Use request queue" option is enabled.
@@ -91,8 +91,8 @@ module.exports = function(app){
             // Return an object with the data extracted from the page.
             // It will be stored to the resulting dataset.
 
-            var tt = new Convertt("item", retorno);
-            return tt
+            //var tt = new Convertt("item", retorno);
+            return retorno
 
     }
 
