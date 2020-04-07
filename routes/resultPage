@@ -59,7 +59,7 @@ module.exports = function(app){
             }
             class Convertt {
                 constructor(retailer) {
-                    this.item = name;
+                    //this.item = name;
                     this.retailer = retailer;
                 }
             }
