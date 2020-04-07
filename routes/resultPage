@@ -58,9 +58,9 @@ module.exports = function(app){
                 }
             }
             class Convertt {
-                constructor(retailer) {
+                constructor(items) {
                     //this.item = name;
-                    this.retailer = retailer;
+                    this.items = items;
                 }
             }
             for(i = 0; i<contator.length; i++){
